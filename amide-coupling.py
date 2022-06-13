@@ -54,7 +54,7 @@ class AmideCoupling:
         deprotect_second_smile = self.deprotect_fmoc(smile2)
         mol1 = Chem.MolFromSmiles(deprotect_first_smile)
         mol2 = Chem.MolFromSmiles(deprotect_second_smile)
-        smarts = "[C:1](=[O:2])O.[N:3] >> [C:1](=[O:2])[N:3]"
+        smarts = "[C:1](=[O:2])O.[Nh:3] >> [C:1](=[O:2])[Nh:3]"
         rxn3 = AllChem.ReactionFromSmarts (smarts)
         products = rxn3.RunReactants ([mol1, mol2])
         resulting_smile_list = []
